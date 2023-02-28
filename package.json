@@ -9,7 +9,7 @@
     "dev": "nodemon --watch \"src/**\" --ext \"js,json\" --exec \"ts-node-dev src/server.ts\"",
     "build": "npm run generate && npm run deploy",
     "start": "npm run build && ts-node-dev src/server.ts",
-    "vercel-build": "npm run deploy"
+    "vercel-build": "npm run build"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
