@@ -4,8 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts",
-    "start": "ts-node-dev src/server.ts"
+    "generate": "npx prisma generate",
+    "deploy": "npx prisma migrate deploy",
+    "dev": "npm run generate && yarn prisma migrate dev && nodemon --watch \"src/**\" --ext \"js,json\" --exec \"ts-node-dev src/server.ts\"",
+    "build": "npm run generate",
+    "start": "npm run build && ts-node-dev src/server.ts"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
