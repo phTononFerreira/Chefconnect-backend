@@ -6,8 +6,8 @@
   "scripts": {
     "generate": "npx prisma generate",
     "deploy": "npx prisma migrate deploy",
-    "dev": "npm run generate && yarn prisma migrate dev && nodemon --watch \"src/**\" --ext \"js,json\" --exec \"ts-node-dev src/server.ts\"",
-    "build": "npm run generate",
+    "dev": "nodemon --watch \"src/**\" --ext \"js,json\" --exec \"ts-node-dev src/server.ts\"",
+    "build": "npm run generate && npm run deploy",
     "start": "npm run build && ts-node-dev src/server.ts"
   },
   "devDependencies": {
